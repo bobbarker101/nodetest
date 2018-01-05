@@ -4,6 +4,8 @@ var express = require('express'),
     morgan  = require('morgan');
     
 Object.assign=require('object-assign')
+app.use("/assets", express.static(__dirname + '/views/assets'));
+app.use("/images", express.static(__dirname + '/views/images'));
 
 app.engine('html', require('ejs').renderFile);
 app.use(morgan('combined'))
